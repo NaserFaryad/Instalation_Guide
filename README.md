@@ -100,6 +100,80 @@ After the installation is complete add the following to the bottom of your `~/.p
 if [ -d "/usr/local/cuda-11.5/bin/" ]; then
     export PATH=/usr/local/cuda-11.5/bin${PATH:+:${PATH}}
     export LD_LIBRARY_PATH=/usr/local/cuda-11.5/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-fi```
+fi
+```
 
+
+##Install libcudnn8
+
+Add the Repo:
+
+**NOTE:** *The 20.04 repo from NVIDIA does not supply libcudnn but the 18.04 repo does and installs just fine into 20.04.*
+
+`echo "deb http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64 /" | sudo tee /etc/apt/sources.list.d/cuda_learn.list`
+
+
+Install the key:
+
+`sudo apt-key adv --fetch-keys  http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub`
+
+Update the system:
+
+`sudo apt update`
+
+Install libcudnn 8.0.4:
+
+`sudo apt install libcudnn8`
+
+I recommend now to **reboot** the system for the changes to take effect.
+
+After it reboots check the installations:
+
+```~$ nvidia-smi
+Thu Nov 18 07:31:31 2021       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 495.44       Driver Version: 495.44       CUDA Version: 11.5     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA GeForce ...  Off  | 00000000:01:00.0  On |                  N/A |
+| 40%   38C    P8     1W /  38W |    310MiB /  2000MiB |      4%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A      2091      G   /usr/lib/xorg/Xorg                 46MiB |
+|    0   N/A  N/A      2680      G   /usr/lib/xorg/Xorg                163MiB |
+|    0   N/A  N/A      2906      G   compton                             1MiB |
+|    0   N/A  N/A      3262      G   /opt/waterfox/waterfox             85MiB |
++-----------------------------------------------------------------------------+
+```
+
+and check CUDA install:
+
+```~$ nvcc -V
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2021 NVIDIA Corporation
+Built on Mon_Sep_13_19:13:29_PDT_2021
+Cuda compilation tools, release 11.5, V11.5.50
+Build cuda_11.5.r11.5/compiler.30411180_0
+```
+
+and check libcudnn install:
+
+```~$ /sbin/ldconfig -N -v $(sed 's/:/ /' <<< $LD_LIBRARY_PATH) 2>/dev/null | grep libcudnn
+    libcudnn_cnn_infer.so.8 -> libcudnn_cnn_infer.so.8.0.4
+    libcudnn.so.8 -> libcudnn.so.8.0.4
+    libcudnn_adv_train.so.8 -> libcudnn_adv_train.so.8.0.4
+    libcudnn_ops_infer.so.8 -> libcudnn_ops_infer.so.8.0.4
+    libcudnn_cnn_train.so.8 -> libcudnn_cnn_train.so.8.0.4
+    libcudnn_adv_infer.so.8 -> libcudnn_adv_infer.so.8.0.4
+    libcudnn_ops_train.so.8 -> libcudnn_ops_train.so.8.0.4
+```
 
