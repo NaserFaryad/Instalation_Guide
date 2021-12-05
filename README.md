@@ -154,6 +154,7 @@ Thu Nov 18 07:31:31 2021
 |    0   N/A  N/A      3262      G   /opt/waterfox/waterfox             85MiB |
 +-----------------------------------------------------------------------------+
 ```
+**NOTE:** maybe after installation of the NVIDIA drivers after inserting `nvidia-smi` this error occurred: *NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.* In this case maybe your Secure Boot is Enable so reboot the PC and press the appropriate key to go to BIOS. after that, change the status of Secure Boot to disable.
 
 and check CUDA install:
 
@@ -177,5 +178,5 @@ and check libcudnn install:
     libcudnn_ops_train.so.8 -> libcudnn_ops_train.so.8.0.4
 ```
 
-**NOTE:** maybe after installation of the NVIDIA drivers anfter insert `nvidia-smi` this error occured: *NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.* In this case maybe your Secure Boot in Enable so reboot the PC and press the appropriate key to going to BIOS. after that, change the status of Secure Boot to disable.
+
 
