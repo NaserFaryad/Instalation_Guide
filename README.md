@@ -25,16 +25,16 @@ Run the `.run` file as `sudo`:
 
 If you get the following, just choose `Continue`:
 
-`┌──────────────────────────────────────────────────────────────────────────────┐
+```┌──────────────────────────────────────────────────────────────────────────────┐
 │ Existing package manager installation of the driver found. It is strongly    │
 │ recommended that you remove this before continuing.                          │
 │ Abort                                                                        │
 │ Continue                                                                     │
 │                                                                             
-`
+```
 Accept the EULA:
 
-`┌──────────────────────────────────────────────────────────────────────────────┐
+```┌──────────────────────────────────────────────────────────────────────────────┐
 │  End User License Agreement                                                  │
 │  --------------------------                                                  │
 │                                                                              │
@@ -57,11 +57,11 @@ Accept the EULA:
 │                                                                              │
 │──────────────────────────────────────────────────────────────────────────────│
 │ Do you accept the above EULA? (accept/decline/quit):                         │
-│ accept`                                                                       
+│ accept```                                                                       
 
 Unselect the video driver by pressing the spacebar while `[X] Driver` is highlighted:
 
-`┌──────────────────────────────────────────────────────────────────────────────┐
+```┌──────────────────────────────────────────────────────────────────────────────┐
 │ CUDA Installer                                                               │
 │ - [ ] Driver                                                                 │
 │      [ ] 495.29.05                                                           │
@@ -84,15 +84,15 @@ Unselect the video driver by pressing the spacebar while `[X] Driver` is highlig
 │                                                                              │
 │                                                                              │
 │                                                                              │
-│ Up/Down: Move | Left/Right: Expand | 'Enter': Select | 'A': Advanced options │`
+│ Up/Down: Move | Left/Right: Expand | 'Enter': Select | 'A': Advanced options │```
 
 Then press the down arrow to `Install`. Press `Enter` then wait for installation to complete.
 
 After the installation is complete add the following to the bottom of your `~/.profile` or add it to the `/etc/profile.d/cuda.sh` file which you might have to create for all users (global):
 
-`# set PATH for cuda 11.5 installation
+```# set PATH for cuda 11.5 installation
 if [ -d "/usr/local/cuda-11.5/bin/" ]; then
     export PATH=/usr/local/cuda-11.5/bin${PATH:+:${PATH}}
     export LD_LIBRARY_PATH=/usr/local/cuda-11.5/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-fi`
+fi```
 
