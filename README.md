@@ -57,7 +57,8 @@ Accept the EULA:
 │                                                                              │
 │──────────────────────────────────────────────────────────────────────────────│
 │ Do you accept the above EULA? (accept/decline/quit):                         │
-│ accept```                                                                       
+│ accept
+```
 
 
 Unselect the video driver by pressing the spacebar while `[X] Driver` is highlighted:
@@ -86,7 +87,8 @@ Unselect the video driver by pressing the spacebar while `[X] Driver` is highlig
 │                                                                              │
 │                                                                              │
 │                                                                              │
-│ Up/Down: Move | Left/Right: Expand | 'Enter': Select | 'A': Advanced options │```
+│ Up/Down: Move | Left/Right: Expand | 'Enter': Select | 'A': Advanced options │
+```
 
 
 Then press the down arrow to `Install`. Press `Enter` then wait for installation to complete.
