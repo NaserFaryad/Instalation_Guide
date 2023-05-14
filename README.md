@@ -18,6 +18,9 @@ Here is how to list all nvidia driver version on your Ubuntu machine using the c
 >Another way to install the NVIDIA driver is from *Software & Updates --> Additional Drivers*.
 
 Reboot the system so the new driver takes effect.
+
+Please select the release you want from the list below, and be sure to check www.nvidia.com/drivers for more recent production drivers appropriate for your hardware configuration.
+https://developer.nvidia.com/cuda-toolkit-archive
 Now, download the CUDA 11.5.0 .run file from NVIDIA:
 
 ```wget https://developer.download.nvidia.com/compute/cuda/11.5.0/local_installers/cuda_11.5.0_495.29.05_linux.run```
