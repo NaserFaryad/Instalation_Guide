@@ -12,6 +12,7 @@ In this time the latest version is 495.44.So feel free to install the 495.44 dri
 Here is how to list all nvidia driver version on your Ubuntu machine using the combination of the apt-cache command and egrep command/grep command:
 
 ```apt-cache search 'nvidia-driver-' | grep '^nvidia-driver-[[:digit:]]*' ```
+
 ```sudo apt install nvidia-driver-495```
 
 >Another way to install the NVIDIA driver is from *Software & Updates --> Additional Drivers*.
