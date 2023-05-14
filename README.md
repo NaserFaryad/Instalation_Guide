@@ -9,7 +9,9 @@ I don't recommend installing the NVIDIA drivers that come with CUDA as they do n
 The Ubuntu repositories now contain the same drivers as the ```graphics-drivers``` PPA. 
 Enter ```apt search nvidia-driver``` To get the latest version of the driver.
 In this time the latest version is 495.44.So feel free to install the 495.44 drivers.
+Here is how to list all nvidia driver version on your Ubuntu machine using the combination of the apt-cache command and egrep command/grep command:
 
+```apt-cache search 'nvidia-driver-' | grep '^nvidia-driver-[[:digit:]]*' ```
 ```sudo apt install nvidia-driver-495```
 
 >Another way to install the NVIDIA driver is from *Software & Updates --> Additional Drivers*.
