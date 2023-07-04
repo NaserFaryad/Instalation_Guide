@@ -9,9 +9,11 @@ I don't recommend installing the NVIDIA drivers that come with CUDA as they do n
 The Ubuntu repositories now contain the same drivers as the ```graphics-drivers``` PPA. 
 Enter ```apt search nvidia-driver``` To get the latest version of the driver.
 In this time the latest version is 495.44.So feel free to install the 495.44 drivers.
-Here is how to list all nvidia driver version on your Ubuntu machine using the combination of the apt-cache command and egrep command/grep command:
+Here is how to list all Nvidia driver versions on your Ubuntu machine using the combination of the apt-cache command and egrep command/grep command:
 
-NOTE: for cuda11.8 you should install Driver 520.0 atleast. 
+NOTE: for cuda11.8 you should install Driver 520.0 at least. 
+
+NOTE: Remove CUDA Toolkit: `sudo apt-get --purge remove "*cublas*" "*cufft*" "*curand*" "*cusolver*" "*cusparse*" "*npp*" "*nvjpeg*" "cuda*" "nsight*" `
 
 ```apt-cache search 'nvidia-driver-' | grep '^nvidia-driver-[[:digit:]]*' ```
 
